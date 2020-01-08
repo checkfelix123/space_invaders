@@ -65,7 +65,7 @@ public class MultiServer extends java.lang.Thread {
             Logger.getLogger(MultiServer.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-// Innere Klasse zur Serversteuerung// Innere Klasse zur Serversteuerung
+// Innere Klasse zur Serversteuerung
 
     static class Console extends Thread {
 

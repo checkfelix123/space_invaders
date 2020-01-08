@@ -71,6 +71,7 @@ public class Application extends StateBasedGame {
     // Main Method
     public static void main(String[] args) {
        System.setProperty("org.lwjgl.librarypath", new File(System.getProperty("user.dir"), "natives").getAbsolutePath());
+       System.setProperty("net.java.games.input.librarypath", new File(System.getProperty("user.dir"), "natives").getAbsolutePath());
         
         try {
               
