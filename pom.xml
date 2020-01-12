@@ -21,4 +21,58 @@
                 <version>1.0.2</version>
         </dependency>
     </dependencies>
+    <build>
+        
+        <plugins>
+           
+            <!--  generate fat jar  -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <mainClass>checkfelix123.space_invaders.app.Application</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>assemble-all</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!--  set the main class  flat jar  -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <mainClass>checkfelix123.space_invaders.app.Application</mainClass>
+                        </manifest>
+                    </archive>
+                    <outputDirectory>${basedir}/target</outputDirectory>
+                    <resources>
+                        <resource>
+                            <directory>/natives</directory>
+                             <filtering>true</filtering>
+                        </resource>
+                    </resources>
+                </configuration>
+               
+            </plugin>
+        </plugins>
+    </build>
 </project>

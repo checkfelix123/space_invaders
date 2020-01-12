@@ -60,12 +60,9 @@ public class GameFunctions {
     
             while(itShotL.hasNext()){
                 PositioningObject o = itShotL.next();
-               
                  if(o.getPosY()+WITDH>=0){
-                     
                       o.updateY(true);
                 }else if(!shotList.isEmpty()){
-                     System.out.println("shot removed");
                      itShotL.remove();
                  }
 
